@@ -1,12 +1,12 @@
 # Install Cosyra CLI
 
 Cosyra CLI connects your terminal to your cloud workspace. This release is
-`0.12.0-rc.3`, for macOS and Linux on ARM64 and Intel/AMD64.
+`0.12.0-rc.4`, for macOS and Linux on ARM64 and Intel/AMD64.
 
 ## Install
 
 ```bash
-curl -fsSL https://github.com/portablcorp/cosyra-releases/releases/download/cosyra-v0.12.0-rc.3/install.sh | bash
+curl -fsSL https://github.com/portablcorp/cosyra-releases/releases/download/cosyra-v0.12.0-rc.4/install.sh | bash
 ```
 
 Downloads are public. You need Bash, curl, tar, and `shasum` or `sha256sum`.
@@ -44,7 +44,7 @@ entries. Existing aliases still take precedence, so use the full path if needed.
 ## Upgrade
 
 ```bash
-curl -fsSL https://github.com/portablcorp/cosyra-releases/releases/download/cosyra-v0.12.0-rc.3/install.sh | bash -s -- --replace
+curl -fsSL https://github.com/portablcorp/cosyra-releases/releases/download/cosyra-v0.12.0-rc.4/install.sh | bash -s -- --replace
 ```
 
 Use the installer linked from the release you want. Failed downloads or
