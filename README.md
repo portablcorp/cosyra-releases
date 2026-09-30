@@ -9,15 +9,17 @@ instructions, and release notes. The application source is maintained separately
 
 ## Install the preview
 
-The initial public release is **0.12.0-rc.2**, a prerelease.
+The current public release is **0.12.0-rc.3**, a prerelease.
 
 ```bash
-curl -fsSL https://github.com/portablcorp/cosyra-releases/releases/download/cosyra-v0.12.0-rc.2/install.sh | bash
+curl -fsSL https://github.com/portablcorp/cosyra-releases/releases/download/cosyra-v0.12.0-rc.3/install.sh | bash
 ```
 
 The installer needs Bash, curl, tar, and `shasum` or `sha256sum`. It installs to
 `~/.local/bin/cosyra` after verifying the archive checksum and executable version.
-No GitHub account, Node, npm, Go, or source checkout is required.
+No GitHub account, Node, npm, Go, or source checkout is required. The installer
+adds its directory to zsh or Bash startup files when missing from PATH. Open a
+new terminal afterward, or use the export command printed for the current one.
 
 ```bash
 "$HOME/.local/bin/cosyra" version
@@ -29,7 +31,8 @@ the command menu. Press `Ctrl+]` to detach from a workspace.
 
 See [installation instructions](INSTALL.md) for PATH, aliases, upgrades, and
 uninstallation. Existing installations require an explicit `--replace`; the
-installer preserves shell files and saved credentials.
+installer preserves existing shell configuration, aliases, and saved credentials.
+Use `--no-modify-path` to skip shell startup changes.
 
 ## Downloads
 
