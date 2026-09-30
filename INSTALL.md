@@ -1,12 +1,12 @@
 # Install Cosyra CLI
 
 Cosyra CLI connects your terminal to your cloud workspace. This release is
-`0.12.0-rc.4`, for macOS and Linux on ARM64 and Intel/AMD64.
+`0.12.0-rc.5`, for macOS and Linux on ARM64 and Intel/AMD64.
 
 ## Install
 
 ```bash
-curl -fsSL https://github.com/portablcorp/cosyra-releases/releases/download/cosyra-v0.12.0-rc.4/install.sh | bash
+curl -fsSL https://github.com/portablcorp/cosyra-releases/releases/download/cosyra-v0.12.0-rc.5/install.sh | bash
 ```
 
 Downloads are public. You need Bash, curl, tar, and `shasum` or `sha256sum`.
@@ -44,7 +44,7 @@ entries. Existing aliases still take precedence, so use the full path if needed.
 ## Upgrade
 
 ```bash
-curl -fsSL https://github.com/portablcorp/cosyra-releases/releases/download/cosyra-v0.12.0-rc.4/install.sh | bash -s -- --replace
+curl -fsSL https://github.com/portablcorp/cosyra-releases/releases/download/cosyra-v0.12.0-rc.5/install.sh | bash -s -- --replace
 ```
 
 Use the installer linked from the release you want. Failed downloads or
@@ -52,3 +52,28 @@ verification preserve the existing executable. Saved credentials are retained.
 
 To uninstall, remove `~/.local/bin/cosyra`. Use `cosyra auth logout` before removing
 it if you also want to log out. Windows is not supported in this release.
+
+## Anonymous CLI analytics
+
+Official builds count successful installations and command starts/outcomes using
+PostHog. Events contain a random installation ID, CLI version, OS, architecture,
+fixed command name, and success status. No prompts, command arguments, paths,
+file contents, terminal output, error text, credentials, or email addresses are
+sent. QA and custom API command usage is excluded. Installs and upgrades are
+separate events; use unique installation IDs to count installed machines.
+
+Opt out before installation or before running the CLI:
+
+```sh
+export DO_NOT_TRACK=1
+```
+
+`COSYRA_TELEMETRY_DISABLED=1` also opts out. Analytics failures never fail a
+command or install. Delivery waits at most 750 ms per request. Source builds
+have analytics disabled unless built with a public PostHog project token.
+
+Before publishing a build with analytics, confirm **Discard client IP data** is
+enabled in the PostHog project's **Settings > Project > IP data capture
+configuration**. The event's `$geoip_disable` property disables location
+enrichment; it does not disable storage of the request IP. The public ingestion
+token cannot read or change this project setting.
