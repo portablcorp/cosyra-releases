@@ -9,10 +9,10 @@ instructions, and release notes. The application source is maintained separately
 
 ## Install the preview
 
-The current public release is **0.12.0-rc.5**, a prerelease.
+The current public release is **0.12.0-rc.6**, a prerelease.
 
 ```bash
-curl -fsSL https://github.com/portablcorp/cosyra-releases/releases/download/cosyra-v0.12.0-rc.5/install.sh | bash
+curl -fsSL https://github.com/portablcorp/cosyra-releases/releases/download/cosyra-v0.12.0-rc.6/install.sh | bash
 ```
 
 The installer needs Bash, curl, tar, and `shasum` or `sha256sum`. It installs to
